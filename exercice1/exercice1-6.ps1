@@ -26,3 +26,6 @@ $resultats | Out-File -FilePath "C:\Users\noah.froment\Desktop\AdminSys_Powershe
 
 # Enregistrer les résultats dans un fichier CSV
 $resultats | Export-CSV -Path "C:\Users\noah.froment\Desktop\AdminSys_Powershell\contextecubsituation7\exercice1\resultats\sauvegarde.csv" -NoTypeInformation
+
+# Afficher le résulat dans la console
+Write-Output $resultats
