@@ -11,7 +11,7 @@ Version : 1
 
 function InfoProcessus {
     param($ProcessName)
-    Get-Process -Name $ProcessName | Select Id, ProcessName, Description
+    Get-Process | Where-Object {$_.Name -like $ProcessName} | Format-Table Id, ProcessName, Description
     return
 }
 

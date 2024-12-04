@@ -9,4 +9,4 @@ Version : 1
 ==========================================================================
 #>
 
-Get-Process -Name "svchost" | Select Id, ProcessName, Description
+    Get-Process | Where-Object {$_.Name -like "svchost"} | Format-Table Id, ProcessName, Description

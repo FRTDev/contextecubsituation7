@@ -11,4 +11,4 @@ Version : 1
 
 $Process = Read-Host "Veuillez saisir le processus à filtrer"
 
-Get-Process -Name $Process | Select Id, ProcessName, Description
+    Get-Process | Where-Object {$_.Name -like $Process} | Format-Table Id, ProcessName, Description
