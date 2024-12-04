@@ -9,6 +9,7 @@ Version : 1
 ==========================================================================
 #>
 
+# Demande de saisie
 $Process = Read-Host "Veuillez saisir le processus à filtrer"
 
-    Get-Process | Where-Object {$_.Name -like $Process} | Format-Table Id, ProcessName, Description
+Get-Process | Where-Object {$_.Name -like $Process} | Select-Object Id, ProcessName, Description

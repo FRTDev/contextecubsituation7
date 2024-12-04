@@ -11,10 +11,12 @@ Version : 1
 
 function InfoProcessus {
     param($ProcessName)
-    Get-Process | Where-Object {$_.Name -like $ProcessName} | Format-Table Id, ProcessName, Description
+    Get-Process | Where-Object {$_.Name -like $ProcessName} | Select-Object Id, ProcessName, Description
     return
 }
 
-
+# Demande de saisie
 $Saisie = Read-Host "Veuillez saisir le processus à filtrer"
+
+# Appel de la fonction
 InfoProcessus -ProcessName $Saisie

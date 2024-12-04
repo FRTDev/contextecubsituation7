@@ -11,11 +11,18 @@ Version : 1
 
 function InfoProcessus {
     param($ProcessName)
-    Get-Process | Where-Object {$_.Name -like $ProcessName} | Format-Table Id, ProcessName, Description
+    Get-Process | Where-Object {$_.Name -like $ProcessName} | Select-Object Id, ProcessName, Description
     return
 }
 
-
+# Demande de saisie
 $Saisie = Read-Host "Veuillez saisir le processus à filtrer"
-InfoProcessus -ProcessName $Saisie | Out-File -FilePath "C:\Users\noah.froment\Desktop\AdminSys_Powershell\contextecubsituation7\exercice1\resultats\sauvegarde.txt" | Export-CSV -Path "C:\Users\noah.froment\Desktop\AdminSys_Powershell\contextecubsituation7\exercice1\resultats\sauvegarde.csv"
 
+# Appel de la fonction
+$resultats = InfoProcessus -ProcessName $Saisie
+
+# Enregistrer les résultats dans un fichier texte
+$resultats | Out-File -FilePath "C:\Users\noah.froment\Desktop\AdminSys_Powershell\contextecubsituation7\exercice1\resultats\sauvegarde.txt"
+
+# Enregistrer les résultats dans un fichier CSV
+$resultats | Export-CSV -Path "C:\Users\noah.froment\Desktop\AdminSys_Powershell\contextecubsituation7\exercice1\resultats\sauvegarde.csv" -NoTypeInformation
