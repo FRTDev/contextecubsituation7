@@ -1,8 +1,8 @@
 <#
 ==========================================================================
-Description : Tous les services qui contient "system" coloré en vert 
+Description : Tous les services qui contient "system" colorÃ© en vert 
 
-Auteur : Noah Froment
+Auteur : FRTDev
 Date : 04/12/2024
 
 Version : 1
@@ -14,7 +14,7 @@ $ServicesCSV = Import-Csv -Path "C:\Users\noah.froment\Desktop\AdminSys_Powershe
 
 # Parcourir chaque ligne du CSV
 foreach ($Service in $ServicesCSV) {
-    # Vérifier si le nom du service contient "system"
+    # VÃ©rifier si le nom du service contient "system"
     if ($Service.Name -like "*system*") {
         # Afficher le nom et le statut du service en vert
         Write-Host ($Service.Name, $Service.Status) -ForegroundColor Green
