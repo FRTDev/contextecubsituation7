@@ -1,8 +1,8 @@
 <#
 ==========================================================================
-Description : Lister le nom, l'id et la description du processus saisie par l'utilisateur (fonction) avec l'enregistrement des résultats dans 2 fichiers de sauvegarde
+Description : Lister le nom, l'id et la description du processus saisie par l'utilisateur (fonction) avec l'enregistrement des rÃ©sultats dans 2 fichiers de sauvegarde
 
-Auteur : Noah Froment
+Auteur : FRTDev
 Date : 04/12/2024
 
 Version : 1
@@ -16,16 +16,16 @@ function InfoProcessus {
 }
 
 # Demande de saisie
-$Saisie = Read-Host "Veuillez saisir le processus à filtrer"
+$Saisie = Read-Host "Veuillez saisir le processus Ã  filtrer"
 
 # Appel de la fonction
 $resultats = InfoProcessus -ProcessName $Saisie
 
-# Enregistrer les résultats dans un fichier texte
+# Enregistrer les rÃ©sultats dans un fichier texte
 $resultats | Out-File -FilePath "C:\Users\noah.froment\Desktop\AdminSys_Powershell\contextecubsituation7\exercice1\resultats\sauvegarde.txt"
 
-# Enregistrer les résultats dans un fichier CSV
+# Enregistrer les rÃ©sultats dans un fichier CSV
 $resultats | Export-CSV -Path "C:\Users\noah.froment\Desktop\AdminSys_Powershell\contextecubsituation7\exercice1\resultats\sauvegarde.csv" -NoTypeInformation
 
-# Afficher le résulat dans la console
+# Afficher le rÃ©sulat dans la console
 Write-Output $resultats
